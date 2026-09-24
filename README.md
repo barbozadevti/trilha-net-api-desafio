@@ -56,3 +56,20 @@ Esse é o schema (model) de Tarefa, utilizado para passar para os métodos que e
 
 ## Solução
 O código está pela metade, e você deverá dar continuidade obedecendo as regras descritas acima, para que no final, tenhamos um programa funcional. Procure pela palavra comentada "TODO" no código, em seguida, implemente conforme as regras acima.
+## Como executar esta solução
+
+Pré-requisitos: [.NET 9 SDK](https://dotnet.microsoft.com/download) e SQL Server (Express ou LocalDB).
+
+1. Ajuste a connection string `ConexaoPadrao` em `appsettings.Development.json`, se necessário.
+2. Crie o banco a partir da migration:
+   ```bash
+   dotnet tool install --global dotnet-ef
+   dotnet ef database update
+   ```
+3. Rode a API e abra o Swagger:
+   ```bash
+   dotnet run
+   ```
+   Acesse `https://localhost:7295/swagger`.
+
+O projeto foi atualizado de .NET 6 (fora de suporte) para .NET 9 e EF Core 9.
